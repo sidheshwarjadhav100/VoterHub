@@ -27,6 +27,39 @@
 - **com.sid.service**: Business logic for the system, including methods to add, delete, update, and view voters.
 - **com.sid.utility**: Utility classes, including database connection management.
 
+## Database and Table Structure
+
+The VoterHub project uses a MySQL database to store and manage the following entities:
+
+### **1. Candidates Table**
+Stores information about the election candidates.
+
+- **candidate_id** (Primary Key): Unique identifier for each candidate.
+- **name**: Name of the candidate.
+
+
+### **2. Voters Table**
+Stores information about the voters.
+
+- **voter_id** (Primary Key): Unique identifier for each voter.
+- **constituency**: Constituency where the voter is registered.
+
+### **3. Address Table**
+Stores details of the elections.
+
+- **house_no** (Primary Key): Unique identifier for each election.
+- **city**: city of candidate.
+- **pin**: pin of candidate.
+
+Tracks which voter voted for which candidate during an election.
+
+- **voter_id**: Foreign Key linking to the Voters table.
+- **candidate_id**: Foreign Key linking to the Candidates table.
+- **election_id**: Foreign Key linking to the Elections table.
+
+---
+
+This structure ensures proper management of voter, candidate, and election data, with optional tracking of interactions and results for each election.
 
 
 
